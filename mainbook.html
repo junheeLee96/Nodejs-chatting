@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <div>
+          <h1>Hello <% data1.forEach(function(item,index){item.nickname});%></h1>
+        <table border ="1">
+            <thead>
+                <tr>
+                    <th>/</th>
+                    <th>닉네임</th>
+                    <th>전화번호</th>
+                    <th>이메일</th>
+                    <th>/</th>
+                </tr>
+            </thead>
+            <tbody>
+              <% data2.forEach(function(item,index){ %>
+              <tr>
+                <td><%= index+1 %></td>
+                <td><%= item.nickname %></td>
+                <td><%= item.phonenumber %></td>
+                <td><%= item.email %></td>
+                <td><a href="/mainchat/<%= item.number %>"><button>채팅하기</button></a></td>
+              </tr>
+          </tbody>
+          <% }); %>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
